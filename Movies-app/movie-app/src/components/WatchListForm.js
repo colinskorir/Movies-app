@@ -32,7 +32,17 @@ function WatchlistForm({ addMovie }) {
 
   return (
     <div className="watchlist-form">
-    
+      <h2>Add Movie to Watchlist</h2>
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          placeholder="Movie Title"
+          required
+        />
+        
       </form>
     </div>
   );
