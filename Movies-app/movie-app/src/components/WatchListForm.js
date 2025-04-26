@@ -68,7 +68,7 @@ function WatchlistForm({ addMovie }) {
           onChange={handleChange}
           placeholder="Poster URL"
         />
-       
+        <button type="submit">Add Movie</button>
       </form>
     </div>
   );
