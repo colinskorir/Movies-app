@@ -50,6 +50,17 @@ function WatchlistForm({ addMovie }) {
           placeholder="Release Year"
           required
         />
+        <input
+          type="number"
+          name="rating"
+          value={formData.rating}
+          onChange={handleChange}
+          placeholder="Rating (0-10)"
+          step="0.1"
+          min="0"
+          max="10"
+          required
+        />
         
       </form>
     </div>
