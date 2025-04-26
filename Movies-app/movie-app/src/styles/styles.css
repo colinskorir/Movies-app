@@ -17,3 +17,28 @@ body {
     text-decoration: none;
     font-weight: bold;
   }
+  
+  .header a:hover {
+    color: #f7f5f5;
+  }
+  
+  .movie-list, .watchlist, .watchlist-form {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .movie-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    vertical-align: top;
+    position: relative; /* For hover overlay positioning */
+    transition: transform 0.2s;
+  }
+  
