@@ -29,6 +29,11 @@ function WatchlistForm({ addMovie }) {
       console.error("Failed to add movie:", err);
     }
   };
+
+  return (
+    <div className="watchlist-form">
+    
+      </form>
     </div>
   );
 }
