@@ -16,7 +16,13 @@ function MovieList({ movies, loading, error }) {
             title: movie.title,
             year: movie.release_date ? movie.release_date.split("-")[0] : "N/A",
             rating: movie.vote_average || 0,
-            
+            poster: movie.poster_path
+            ? `https://image.tmdb.org/t/p/w200${movie.poster_path}`
+            : "https://via.placeholder.com/150",
+          overview: movie.overview, 
+        }}
+      />
+    ))}            
     </div>
   );
 }   
