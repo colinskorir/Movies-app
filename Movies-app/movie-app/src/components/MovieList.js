@@ -12,6 +12,9 @@ function MovieList({ movies, loading, error }) {
         <MovieCard
           key={movie.id}
           movie={{
+            id: movie.id,
+            title: movie.title,
+            year: movie.release_date ? movie.release_date.split("-")[0] : "N/A",
             
     </div>
   );
