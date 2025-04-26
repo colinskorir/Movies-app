@@ -13,7 +13,24 @@ function WatchlistForm({ addMovie }) {
     setFormData({ ...formData, [name]: value });
   };
 
- 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const configObj = {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      };
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/watchlist`, configObj);
+      const newMovie = await response.json();
+      addMovie(newMovie);
+      setFormData({ title: "", year: "", rating: "", poster: "" });
+    } catch (err) {
+      console.error("Failed to add movie:", err);
+    }
+  };
+    </div>
+  );
 }
 
 export default WatchlistForm;
