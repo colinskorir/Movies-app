@@ -42,6 +42,14 @@ function WatchlistForm({ addMovie }) {
           placeholder="Movie Title"
           required
         />
+        <input
+          type="number"
+          name="year"
+          value={formData.year}
+          onChange={handleChange}
+          placeholder="Release Year"
+          required
+        />
         
       </form>
     </div>
