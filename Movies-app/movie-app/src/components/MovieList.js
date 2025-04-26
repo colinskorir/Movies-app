@@ -15,6 +15,7 @@ function MovieList({ movies, loading, error }) {
             id: movie.id,
             title: movie.title,
             year: movie.release_date ? movie.release_date.split("-")[0] : "N/A",
+            rating: movie.vote_average || 0,
             
     </div>
   );
