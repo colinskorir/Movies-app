@@ -61,7 +61,14 @@ function WatchlistForm({ addMovie }) {
           max="10"
           required
         />
-        
+        <input
+          type="url"
+          name="poster"
+          value={formData.poster}
+          onChange={handleChange}
+          placeholder="Poster URL"
+        />
+       
       </form>
     </div>
   );
