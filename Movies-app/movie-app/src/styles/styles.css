@@ -42,3 +42,41 @@ body {
     transition: transform 0.2s;
   }
   
+  .movie-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .movie-card img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .movie-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .movie-card p {
+    margin: 0.25rem 0;
+    color: #555;
+  }
+  
+  .movie-card .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    overflow: auto;
+  }
+  
