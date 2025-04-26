@@ -80,3 +80,18 @@ body {
     overflow: auto;
   }
   
+  .movie-card:hover .hover-overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .movie-card .hover-overlay h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .movie-card .hover-overlay p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
