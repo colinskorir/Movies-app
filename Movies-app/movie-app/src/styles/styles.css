@@ -121,3 +121,24 @@ body {
     cursor: pointer;
     margin-top: 1rem;
   }
+  
+  .watchlist-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
