@@ -14,5 +14,4 @@ function Header() {
 }
 
 export default Header;
-// This code defines a functional component called Header that renders a header section for a movie application.
-// The header includes a title "Movie Flex" and a navigation menu with links to different pages: Movies, Add Movie, and Watchlist.
+

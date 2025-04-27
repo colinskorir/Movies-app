@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .header {
+    background-color: #030703;
+    color: rgb(30, 5, 253);
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  .header a {
+    color: rgb(247, 6, 6);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .header a:hover {
+    color: #f7f5f5;
+  }
+  
+  .movie-list, .watchlist, .watchlist-form {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  .movie-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 1rem;
+    padding: 1rem;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    vertical-align: top;
+    position: relative; /* For hover overlay positioning */
+    transition: transform 0.2s;
+  }
+  
+  .movie-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  .movie-card img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+  
+  .movie-card h3 {
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+  
+  .movie-card p {
+    margin: 0.25rem 0;
+    color: #555;
+  }
+  
+  .movie-card .hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    overflow: auto;
+  }
+  
+  .movie-card:hover .hover-overlay {
+    opacity: 1; /* Show overlay on hover */
+  }
+  
+  .movie-card .hover-overlay h4 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+  }
+  
+  .movie-card .hover-overlay p {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+  
+  .watchlist-form form {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .watchlist-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .watchlist-form button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+  
+  .watchlist-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .error {
+    color: red;
+    text-align: center;
+    margin: 1rem 0;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+  }
