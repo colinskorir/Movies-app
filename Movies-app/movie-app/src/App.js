@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import Header from "./components/Header";
 import MovieList from "./components/MovieList";
-import WatchlistForm from "./components/WatchlistForm";
+import WatchlistForm from "./components/WatchListForm";
 import Watchlist from "./components/Watchlist";
 import "./styles/styles.css";
 
