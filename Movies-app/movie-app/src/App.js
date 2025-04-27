@@ -1,24 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import Header from "./components/Header";
+import MovieList from "./components/MovieList";
+import WatchlistForm from "./components/WatchlistForm";
+import Watchlist from "./components/Watchlist";
+import "./styles/styles.css";
+
+// Define constants outside the component
+const TMDB_API_KEY = process.env.REACT_APP_TMDB_API_KEY || "2d637dbf484354be7e25d40eb3f0daf8";
+const TMDB_BASE_URL = process.env.REACT_APP_TMDB_BASE_URL || "https://api.themoviedb.org/3";
+
 
 function App() {
+  const [watchlist, setWatchlist] = useState([]);
+  const [movies, setMovies] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchMovies = async () => {
+      try {
+        const response = await axios.get(
+          `${TMDB_BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}`
+        );
+        setMovies(response.data.results);
+      } catch (err) {
+        setError("Failed to fetch movies");
+      } finally {
+        setLoading(false);
+        setTimeout(() => {
+          setWatchlist([{ id: 1, title: "Inception" }, { id: 2, title: "Interstellar" }]);
+        }, 1000);
+      }
+    };
+    fetchMovies();
+  }, []);
+
+  const addMovie = (newMovie) => {
+    setWatchlist([...watchlist, newMovie]);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<MovieList movies={movies} loading={loading} error={error} />} />
+        <Route path="/add" element={<WatchlistForm addMovie={addMovie} />} />
+        <Route path="/watchlist" element={<Watchlist watchlist={watchlist} />} />
+      </Routes>
+    </Router>
   );
 }
 
