@@ -1,20 +1,16 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
-function MovieCard({ movie }) {
+function Header() {
   return (
-    <div className="movie-card">
-      <img src={movie.poster} alt={movie.title} onError={(e) => (e.target.src = "https://via.placeholder.com/150")} />
-      <h3>{movie.title}</h3>
-      <p>Year: {movie.year}</p>
-      <p>Rating: {movie.rating.toFixed(1)}</p>
-      <div className="hover-overlay">
-        <h4>{movie.title}</h4>
-        <p>Year: {movie.year}</p>
-        <p>Rating: {movie.rating.toFixed(1)}</p>
-        <p>Overview: {movie.overview || "No overview available"}</p>
-      </div>
-    </div>
+    <header className="header">
+      <h1>Movie Flex</h1>
+      <nav>
+        <Link to="/">Movies</Link>
+        <Link to="/add">Add Movie</Link>
+        <Link to="/watchlist">Watchlist</Link>
+      </nav>
+    </header>
   );
 }
 
-export default MovieCard;
+export default Header;
