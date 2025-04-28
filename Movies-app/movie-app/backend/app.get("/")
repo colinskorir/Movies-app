@@ -1,0 +1,9 @@
+// Route for root URL
+app.get("/", (req, res) => {
+  res.send("Welcome to the Watchlist API!");
+});
+
+// Route to get the watchlist
+app.get("/watchlist", (req, res) => {
+  res.json(watchlist);
+});
