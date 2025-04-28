@@ -2,8 +2,8 @@ import React from "react";
 
 function Watchlist({ watchlist }) {
   return (
-    <div className="watchlist">
-      <h2>My Watchlist</h2>
+    <div className="watchlist-container">
+      <h2 className="watchlist-title">My Watchlist</h2>
       {watchlist.length > 0 ? (
         <div className="watchlist-grid">
           {watchlist.map((movie) => (
@@ -13,15 +13,17 @@ function Watchlist({ watchlist }) {
                 alt={movie.title}
                 className="movie-poster"
               />
-              <h3>{movie.title}</h3>
-              <p>
-                {movie.year} | Rating: {movie.rating}/10
-              </p>
+              <div className="movie-details">
+                <h3>{movie.title}</h3>
+                <p>
+                  {movie.year} | Rating: {movie.rating}/10
+                </p>
+              </div>
             </div>
           ))}
         </div>
       ) : (
-        <p>Your watchlist is empty!</p>
+        <p className="empty-message">Your watchlist is empty!</p>
       )}
     </div>
   );

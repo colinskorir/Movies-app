@@ -27,7 +27,7 @@ function WatchlistForm({ addMovie }) {
       console.log("Adding movie:", newMovie);  // Debugging line
 
       // Send POST request to backend to save movie
-      const response = await fetch("http://localhost:3001/watchlist", {
+      const response = await fetch("http://localhost:3000/watchlist", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newMovie),
